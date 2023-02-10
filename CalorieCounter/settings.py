@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'counter',
+    'user_cal',
     'mathfilters',
     'auth_cal',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

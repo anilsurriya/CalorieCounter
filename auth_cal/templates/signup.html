@@ -18,9 +18,23 @@
     <h2>sign IN</h2>
     <form action="" method="post">
         {% csrf_token %}
-        {{ signup_form }}
-        <br>
-        <button type="submit">Signup</button>
+        {% load widget_tweaks %}
+        
+        <div class="form-group">
+        {% render_field signup_form.username type="text" class="mycssclass" id="exampleInputUsername" placeholder="Username" %}
+        </div>
+        
+        <div class="form-group">
+        {% render_field signup_form.password1 type="password" class="form-control" id="exampleInputPassword" placeholder="Password" %}
+        </div>
+        
+        <div class="form-group">
+        {% render_field signup_form.password2 type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" %}
+        </div>
+        
+        <div>
+        <button type="submit" value="Submit" > Register </button>
+        </div>
     </form>
   </body>
 </html>
