@@ -12,15 +12,15 @@
       crossorigin="anonymous"
     />
     <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
-    <title>Foodie Login</title>
+    <title>User update</title>
   </head>
   <body>
-    <h2>sign IN</h2>
+    <h2>Update Details</h2>
     <form action="" method="post">
         {% csrf_token %}
         {{ user_form }}
         <br>
-        <button type="submit">Login</button>
+        <button type="submit">update</button>
     </form>
   </body>
 </html>
