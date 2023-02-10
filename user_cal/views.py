@@ -21,11 +21,11 @@ def updateuser_view(request):
         user_details = User_cal.objects.get(user = request.user)
     if request.method == "POST":
         user_details.user = request.user
-        user_details.age = request.POST['age']
-        user_details.height = request.POST['height']
-        user_details.weight = request.POST['weight']
+        user_details.age = request.POST['age'] or user_details.age
+        user_details.height = request.POST['height'] or user_details.height
+        user_details.weight = request.POST['weight'] or user_details.weight
         user_details.save()
-        return HttpResponse("...")
+        return redirect('user_cal:userview')
     else:
         user_form = UserCalForm()
         return render(request, 'updateuser.html', {'user_form': user_form})
